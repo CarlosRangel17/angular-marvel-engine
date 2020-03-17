@@ -1,0 +1,48 @@
+@import '~/../../../../../variables';
+
+.no-assets {
+    height: 250px;
+}
+
+.panel-accent{
+    background-color: $dark;
+}
+    .search-card {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .mat-card-content-header {
+        width: 100%;
+        // background-color: rgb(242,242,242);
+        background-color: $primary-dark;
+        /* margin: -16px; */
+        padding: 16px 16px;
+        border-bottom: 1px solid rgba(0,0,0,.12);
+        border-radius: 4px;
+        /* position: absolute; */
+        /* margin-left: -16px;
+        margin-top: -16px !important; */
+    }
+
+    mat-card {
+        padding: 0px;
+    }
+
+    mat-card mat-card-content form {
+        padding: 16px;
+    }
+
+    mat-card.character-cards {
+        background: #333;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .content-header-title {
+        color: rgba(0,0,0,.54); font-size: 18px;
+    }
+
+    div.mat-tab-label-content {
+        color: #fff;
+    }

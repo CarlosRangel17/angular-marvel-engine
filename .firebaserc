@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "angular-marvel-436ba"
+  },
+  "targets": {
+    "angular-marvel-436ba": {
+      "hosting": {
+        "app": [
+          "angular-marvel-436ba"
+        ]
+      }
+    }
+  }
+}

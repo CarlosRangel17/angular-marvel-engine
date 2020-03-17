@@ -1,0 +1,69 @@
+<style>
+  .mat-card-image {
+    margin: inherit;
+    max-width: 100%;
+  }
+
+  mat-card-content {
+    overflow: hidden;
+    position: relative;
+    background: #202020;
+    color: #fff;
+    padding: 20px;
+    border: 0;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+  }
+  
+  mat-card-content::before{
+    content: '';
+    background: #e62429;
+    bottom: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transition-timing-function: cubic-bezier(0.75,0,0.125,1);
+    transition: transform .3s;
+    width: 100%;
+    z-index: -1;
+}
+</style>
+<img style="max-width: 100%;" mat-card-image [src]="getCharacterImage()" alt="photo of {{character.name}}">
+<mat-card-content>
+  <p></p>
+  <p></p>
+  <p fxLayout="row" fxLayoutAlign="center">
+    {{ character.name }}
+  </p>
+  <p></p>
+</mat-card-content>
+<mat-grid-tile-footer  fxLayout="row" fxLayoutAlign="space-between center">
+  <a mat-icon-button target="_blank" [href]="getCharacterLink()">
+      <mat-icon>link</mat-icon>
+  </a>
+  <button mat-icon-button (click)="showCharacter()">
+      <mat-icon>info</mat-icon>
+  </button>
+</mat-grid-tile-footer>
+
+<!--
+<img [src]="getCharacterImage()" alt="photo of {{character.name}}">
+<mat-grid-tile-header>
+  <h3 mat-line>{{character.name}}</h3>
+  <a mat-icon-button target="_blank" [href]="getCharacterLink()">
+      <mat-icon>link</mat-icon>
+  </a>
+  <button mat-icon-button (click)="showCharacter()">
+      <mat-icon>info</mat-icon>
+  </button>
+</mat-grid-tile-header>
+ <mat-grid-tile-footer>
+  <h3 mat-line>{{character.name}}</h3>
+  <a mat-icon-button target="_blank" [href]="getCharacterLink()">
+      <mat-icon>link</mat-icon>
+  </a>
+  <button mat-icon-button (click)="showCharacter()">
+      <mat-icon>info</mat-icon>
+  </button>
+</mat-grid-tile-footer> -->

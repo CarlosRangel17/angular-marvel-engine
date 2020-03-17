@@ -1,0 +1,95 @@
+<div class="jumbotron-container" fxLayout="row wrap" fxLayoutAlign="center center">
+
+    <!-- Main Image Component -->
+    <div fxFlex="33%" fxFlex.lt-lg="50%" fxFlex.sm="66%" fxFlex.xs="100%" fxLayoutAlign="center center">
+        <!-- <img class="animate-show-hide" style="max-width:100%;"
+            src="../../../../assets/marvel-logo-png-4.png" alt="" jsan="8.src,0.alt" data-atf="1" jstcache="3398"
+            ng-show="showMenu"> -->
+        <img class="animate-show-hide" style="max-width:100%;" src="../../../../assets/1200px-MarvelLogo.svg.png" alt=""
+                jsan="8.src,0.alt" data-atf="1" jstcache="3398" ng-show="showMenu">
+    </div>
+
+    <!-- Search Panel Component -->
+    <div class="search-card" fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center">
+        <mat-card fxFlex="66%" fxFlex.lt-md="100%">
+            <mat-card-content>
+                <!-- Mat Content Header -->
+                <div class="mat-card-content-header" fxLayout="row" fxLayoutAlign="space-between start"
+                    style="padding-bottom:5px">
+                    <div fxLayout="row wrap" fxLayoutAlign="start" class="content-header-title" fxFlex>
+                        <span fxFlex="100%" style="margin-bottom: 10px; color: #fff" > Marvel Search Engine </span>
+                    </div>
+                </div>
+
+                <!-- Mat Content Form -->
+                <form action="" fxLayout="row wrap" fxLayoutAlign="space-between" [formGroup]="searchForm">
+                    <mat-form-field appearance="outline" fxFlex="100%" [color]="'warn'">
+                        <mat-label>Search by Character</mat-label>
+                        <input matInput placeholder="Search by Chaarcter" #searchBox formControlName="term"
+                            (keyup)="searchTopResults(searchBox.value)">
+                        <mat-icon matSuffix>person</mat-icon>
+                        <mat-hint>Try something like 'Wolverine' or 'Iron Man'</mat-hint>
+                    </mat-form-field>
+
+                    <div fxHide fxFlex="100%" fxLayoutAlign="end">
+                        <mat-chip-list>
+                            <mat-label></mat-label>
+                            <mat-chip>Trending Characters</mat-chip>
+                            <mat-chip>Upcoming Movies</mat-chip>
+                        </mat-chip-list>
+                    </div>
+
+                    <div fxLayoutAlign="center center" fxFlex style="margin-bottom: -35px">
+                        <button style="border-radius: 20px; padding-right: 35px" fxLayoutAlign="center center"
+                            mat-flat-button color="accent" (click)="selectedTabIndex = disableSearchResults ? 0 : 1">
+                            <mat-icon matSuffix>search</mat-icon>
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<!-- Asset Container Component w/ng-template capability -->
+<div class="search-container" fxLayout="row wrap" fxLayoutAlign="center center">
+    <div class="content-grid-top" fxFlex="100%" fxLayoutAlign="center">
+        <h1 class="mat-h1" style="margin-top: 16px;">Characters</h1>
+    </div>
+    <mat-progress-bar mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+
+    <!-- Featured Panel -->
+    <div class="panel-accent" fxFlex="100%" fxLayout="row wrap"
+        fxLayoutAlign="center center">
+
+        <!-- Ng Template Portion <?> -->
+        <mat-tab-group mat-align-tabs="center" fxFlex="100%" [backgroundColor]="'primary'" [selectedIndex]="selectedTabIndex">
+            <mat-tab label="Featured Characters">
+                <div style="width:100%;" 
+                    class="container" 
+                    [class.no-assets]="featuredCharacters && featuredCharacters.length < 1"
+                    fxLayout="row wrap"
+                    fxLayoutAlign="space-around"
+                    flexLayoutGap="15%">
+                        <mat-card fxFlex class="character-cards" fxFlex="200px"
+                            *ngFor="let character of featuredCharacters">
+                            <app-character-card [character]="character" (selectedChange)="selectCharacter($event)">
+                            </app-character-card>
+                        </mat-card>
+                    </div>
+            </mat-tab>
+            <mat-tab label="Search Results" [disabled]='disableSearchResults'>
+                <!-- Search Results Panel -->
+                <div style="width:100%;" class="container" fxLayout="row wrap" fxLayoutAlign="space-around" 
+                    flexLayoutGap="15%">
+                        <mat-card class="character-cards" fxFlex="200px"
+                            *ngFor="let character of characters | async; trackBy:trackByCharacters">
+                            <app-character-card [character]="character" (selectedChange)="selectCharacter($event)">
+                            </app-character-card>
+                        </mat-card>
+                    </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
