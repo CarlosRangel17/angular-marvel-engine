@@ -1,4 +1,4 @@
-import { MatAutocompleteModule, MatButtonToggleModule, MatCheckboxModule, MatListModule, MatNativeDateModule, MatProgressBarModule, MatRadioModule, MatSliderModule, MatTooltipModule } from '@angular/material';
+import { MatAutocompleteModule, MatButtonToggleModule, MatCheckboxModule, MatListModule, MatNativeDateModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSliderModule, MatTooltipModule } from '@angular/material';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -49,7 +49,8 @@ import { NgModule } from '@angular/core';
     MatNativeDateModule,
     MatDatepickerModule,
     MatTooltipModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatToolbarModule,
@@ -77,7 +78,8 @@ import { NgModule } from '@angular/core';
     MatRadioModule,
     MatDatepickerModule,
     MatTooltipModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MatComponentsModule { }

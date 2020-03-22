@@ -85,7 +85,7 @@
                     flexLayoutGap="15%">
                         <mat-card class="character-cards" fxFlex="200px"
                             *ngFor="let character of characters | async; trackBy:trackByCharacters">
-                            <app-character-card [character]="character" (selectedChange)="selectCharacter($event)">
+                            <app-character-card [character]="character">
                             </app-character-card>
                         </mat-card>
                     </div>
@@ -93,3 +93,5 @@
         </mat-tab-group>
     </div>
 </div>
+
+

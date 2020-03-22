@@ -29,24 +29,24 @@
     z-index: -1;
 }
 </style>
-<img style="max-width: 100%;" mat-card-image [src]="getCharacterImage()" alt="photo of {{character.name}}">
-<mat-card-content>
-  <p></p>
-  <p></p>
-  <p fxLayout="row" fxLayoutAlign="center">
-    {{ character.name }}
-  </p>
-  <p></p>
-</mat-card-content>
-<mat-grid-tile-footer  fxLayout="row" fxLayoutAlign="space-between center">
-  <a mat-icon-button target="_blank" [href]="getCharacterLink()">
-      <mat-icon>link</mat-icon>
-  </a>
-  <button mat-icon-button (click)="showCharacter()">
-      <mat-icon>info</mat-icon>
-  </button>
-</mat-grid-tile-footer>
 
+<img style="max-width: 100%;" mat-card-image [src]="getCharacterImage()" alt="photo of {{character.name}}">
+    <mat-card-content>
+      <p></p>
+      <p></p>
+      <p fxLayout="row" fxLayoutAlign="center">
+        {{ character.name }}
+      </p>
+      <p></p>
+    </mat-card-content>
+    <mat-grid-tile-footer  fxLayout="row" fxLayoutAlign="space-between center">
+      <a mat-icon-button target="_blank" [href]="getCharacterLink()">
+          <mat-icon>link</mat-icon>
+      </a>
+      <button mat-icon-button (click)="showCharacter()">
+          <mat-icon>info</mat-icon>
+      </button>
+    </mat-grid-tile-footer>
 <!--
 <img [src]="getCharacterImage()" alt="photo of {{character.name}}">
 <mat-grid-tile-header>

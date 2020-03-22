@@ -31,8 +31,6 @@ export class CharacterComponent implements OnInit {
   disableSearchResults = true;
   selectedTabIndex = 0;
 
-  @ViewChild(MatDrawer, { static: false }) drawer: MatDrawer;
-
   private searchTerms = new Subject<string>();
 
   term = new FormControl();
@@ -102,11 +100,6 @@ export class CharacterComponent implements OnInit {
     this._snackBar.open("Now searching DC", "action", {
       duration: 2000,
     });
-  }
-
-  selectCharacter(character: Character) {
-    this.selectedCharacter = character;
-    this.drawer.toggle();
   }
 
   trackByCharacters(index: number, character: Character) { return character.id; }

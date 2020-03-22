@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Overview, OverviewType } from 'src/app/core/models/overview.model';
 
 import { Character } from 'src/app/core/models/character.model';
 import { CoreService } from 'src/app/core/core.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-character-card',
@@ -9,14 +11,12 @@ import { CoreService } from 'src/app/core/core.service';
 })
 export class CharacterCardComponent {
   @Input('character') character: Character;
-  @Output('selectedChange') selectedChange = new EventEmitter<Character>();
+  size: string = 'standard_xlarge'; // landscape_incredible
 
-  constructor(private _coreService: CoreService) {}
+  constructor(private _coreService: CoreService, private _sharedService: SharedService) {}
 
   getCharacterImage(): string {
-    var size = 'standard_xlarge'; // landscape_incredible
-
-    return this._coreService.getImage(size, this.character.thumbnail);
+    return this._coreService.getImage(this.size, this.character.thumbnail);
   }
 
   getCharacterLink(): string {
@@ -24,6 +24,7 @@ export class CharacterCardComponent {
   }
 
   showCharacter() {
-    this.selectedChange.emit(this.character);
+    // this.selectedChange.emit(this.character); Changed from output to shared service change emission
+    this._sharedService.emitChange(new Overview(this.character, OverviewType.Character));
   }
 }
