@@ -13,7 +13,7 @@
     <!-- <app-nav></app-nav> -->
     <mat-sidenav-container class="app-container">
       <mat-sidenav class="app-full-height app-side-nav" #sidenav mode="over">
-        <p></p>
+        <p>Test</p>
         <p></p>
         <p></p>
       </mat-sidenav>
@@ -55,7 +55,7 @@
             Angular Superhero
           </span>
           <span>
-            <button mat-button (click)="sidenav.toggle()">
+            <button mat-button (click)="sidenav.toggle()" fxHide.xs="true">
               <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
             </button>
             <button color="accent" mat-raised-button (click)="sidenav.toggle()">

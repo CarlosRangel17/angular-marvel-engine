@@ -26,7 +26,6 @@ export class CharacterComponent implements OnInit {
   featuredCharacters: Character[] = [];
   characters: Observable<Character[]>;
   isVisible = false;
-  selectedCharacter: Character;
   showProgress = false;
   disableSearchResults = true;
   selectedTabIndex = 0;
