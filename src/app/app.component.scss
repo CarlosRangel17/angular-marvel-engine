@@ -6,9 +6,99 @@
   }
 
 .app-side-nav {
-  width: 20rem;
+  width: 18rem;
+  background: #fff;
+  // background-image: url('../assets/background.png');
+  // background-image: url('../assets/black-white-strip.jpg');
+  overflow: auto;
+  position: fixed !important;
 }
-  
+
+.mat-icon.mat-list-icon {
+  color: #5F6368 !important;
+}
+
+div.mat-line {
+  background: transparent !important;
+}
+
+.mat-line:first-of-type {
+  font: 500 15px/20px Google Sans,Roboto,Arial,sans-serif !important; 
+  color: #5F6368 !important;
+}
+
+.item-list {
+  background: #fff;
+  margin: 4px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.item-list .mat-list-item-content {
+  border: 0;
+  border-radius: 0 48px 48px 0;
+  margin-right: 4px;
+  width: 240px;
+}
+
+.item-list.active .mat-list-item-content {
+  background-color: #e8f0fe;
+}
+
+.item-list.active .mat-list-item-content .mat-icon.mat-list-icon {
+  color: $primary-dark !important;
+}
+
+.item-list.active .mat-list-item-content .mat-list-text .mat-line {
+  color: $primary-dark !important;
+}
+
+
+.item-list .mat-list-item-content:hover {
+  background-color: rgba(241,243,244,1);
+  border: 0;
+  border-radius: 0 48px 48px 0;
+  margin-right: 4px;
+  width: 240px;
+  cursor: pointer;
+}
+
+.item-list .mat-list-item-content div:first-of-type,
+.item-list-icon {
+  z-index: 10000;
+}
+
+.nav-menu {
+  background: #fff;
+  color: #5F6368;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+.mat-subheader {
+  color: #5F6368;
+  background: #fff;
+}
+
+.nav-option {
+  border: 0;
+  border-radius: 0 48px 48px 0;
+  height: 48px;
+  margin: 4px;
+  width: 240px;
+}
+
+.nav-button {
+  // color: #4285f4;
+  color: $app-white;
+  border-radius: 0 48px 48px 0;
+}
+
+.mat-list-icon {
+  color: $app-white;
+  // color: rgba(0, 0, 0, 0.54);
+}
+
 .app-static-nav {
   position: absolute;
 }
@@ -29,6 +119,25 @@
   height: 15px;
   background-color: $primary-dark;
   margin-top: 0;
+}
+
+.app-primary-bg {
+  color: $app-white;
+  background-color: $primary;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 15px;
+}
+
+.app-accent-dark-bg {
+  height: 15px;
+  background-color: $accent-dark;
+  margin-top: 0;
+}
+
+.transparent-bg {
+  background: transparent;
 }
 
 .jumbotron-container {

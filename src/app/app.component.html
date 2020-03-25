@@ -1,5 +1,5 @@
 <mat-drawer-container>
-  <mat-drawer style="position: fixed; max-width: 20rem;" mode="over" position="end">
+  <mat-drawer style="position: fixed; max-width: 20rem; width: 100%;" mode="over" position="end">
     <mat-tab-group>
       <mat-tab label="Details" *ngIf="overview && overview.detail">
         <app-character-detail [character]="overview.detail"></app-character-detail>
@@ -13,9 +13,68 @@
     <!-- <app-nav></app-nav> -->
     <mat-sidenav-container class="app-container">
       <mat-sidenav class="app-full-height app-side-nav" #sidenav mode="over">
-        <p>Test</p>
-        <p></p>
-        <p></p>
+        <p fxLayout="row" class="app-primary-dark-bg mb-0"></p>
+        <p class="app-primary-bg" fxLayoutAlign="center center" style="padding-right: 15px;">
+          <span fxLayoutAlign="center center">
+            <img width="40" alt="Angular Logo"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+            Angular Superhero
+          </span>
+        </p>
+       <p class="nav-menu mt-0">
+        <mat-list>
+          <div mat-subheader>Main</div>
+          <mat-list-item class="item-list" *ngFor="let folder of folders">
+            <mat-icon class="item-list-icon" mat-list-icon>{{folder.icon}}</mat-icon>
+            <div mat-line>{{folder.name}}</div>
+            <div mat-line *ngIf="folder.updated"> {{folder.updated }} </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item class="item-list" *ngFor="let op of ops">
+            <mat-icon class="item-list-icon" mat-list-icon>{{op.icon}}</mat-icon>
+            <div mat-line>{{op.name}}</div>
+            <div mat-line *ngIf="op.updated"> {{op.updated }} </div>
+          </mat-list-item>
+          <div class="" mat-subheader></div>
+          <div class="" mat-subheader></div>
+          <div class="" mat-subheader></div>
+          <div class="" mat-subheader></div>
+          <div class="" mat-subheader></div>
+          <div class="" mat-subheader></div>
+          <mat-divider></mat-divider>
+          <mat-list-item class="item-list" *ngFor="let note of notes">
+            <mat-icon class="item-list-icon" mat-list-icon>{{note.icon}}</mat-icon>
+            <div mat-line>{{note.name}}</div>
+            <div mat-line *ngIf="note.updated"> {{note.updated }} </div>
+        </mat-list-item>
+          <div class="" mat-subheader></div>
+        </mat-list>
+       </p>
+        <!-- <p fxLayout="row wrap" fxLayoutAlign="start">
+          <span>
+            <p>
+              <button fxFlex mat-button (click)="sidenav.toggle()" style="color: ">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                <br/>
+                Home 
+              </button>
+            </p>
+            <p>
+              <button fxFlex mat-button (click)="sidenav.toggle()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">library_books</mat-icon>
+                <br/>
+                Comics
+              </button></p>
+            <p>
+              <button fxFlex mat-button (click)="sidenav.toggle()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">favorite</mat-icon>
+                <br/>
+                Favorite
+              </button></p>
+          </span>
+        </p> -->
+        <!-- <p class="nav-option"></p>
+        <p class="nav-option"></p> -->
       </mat-sidenav>
 
       <mat-sidenav-content>
